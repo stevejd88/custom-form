@@ -3,6 +3,7 @@ import "./App.css";
 
 import FormInput from "./components/form-input/form-input.component";
 import TextArea from "./components/text-area/text-area.component";
+import Checkbox from "./components/checkbox/checkbox.component";
 import Button from "./components/button/button.component";
 
 const initialState = {
@@ -14,6 +15,7 @@ function App() {
   const [state, setState] = useState(initialState);
 
   const { address, meaning } = state;
+  const iceCream = ["Chocolate", "Vanilla", "Strawberry"];
 
   const onChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -30,6 +32,11 @@ function App() {
           value={address}
           type='text'
           onChange={onChange}
+        />
+        <Checkbox
+          label='Which are your favorite ice cream flavors?'
+          options={iceCream}
+          type='checkbox'
         />
         <TextArea
           label='What is the meaning of life?'
