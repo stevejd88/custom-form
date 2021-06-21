@@ -1,0 +1,37 @@
+.text-area-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 460px;
+  height: 164px;
+}
+
+.text-area-group label {
+  color: #6f7482;
+  width: 460px;
+  height: 23px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.text-area-group textarea {
+  width: 460px;
+  max-width: 460px;
+  height: 139px;
+  background-color: #f8fafc;
+  border: none;
+  border-radius: 4px;
+}
+.text-area-group textarea:focus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+  position: static;
+  width: 460px;
+  height: 139px;
+  border-radius: 4px;
+}

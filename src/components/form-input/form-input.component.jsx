@@ -27,6 +27,7 @@ const FormInput = ({
         disabled={disabled}
         placeholder={placeholder}
       ></input>
+      <p className='error'>Field is required</p>
     </div>
   );
 };

@@ -1,13 +1,16 @@
 import React from "react";
 
+import "./radio.styles.css";
+
 const Radio = ({ label, name, options, type, onChange }) => {
   return (
-    <div className='radio-group'>
+    <div className='radio'>
       <p>{label}</p>
       {options.map((option) => {
         return (
           <div className='radio-group'>
             <input
+              className='radio-input'
               type={type}
               id={option.toLowerCase()}
               name={name}
