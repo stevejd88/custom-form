@@ -1,21 +1,10 @@
 import React from "react";
 
-const Checkbox = ({ label, options, type }) => {
+const Checkbox = ({ label, name, type, checked }) => {
   return (
     <div>
-      <p>{label}</p>
-      {options.map((option) => {
-        return (
-          <div className='option-group'>
-            <input
-              type={type}
-              id={option.toLowerCase()}
-              name={option.toLowerCase()}
-            />
-            <label for={option.toLowerCase()}>{option}</label>
-          </div>
-        );
-      })}
+      <input type={type} id={name} name={name} checked={checked} />
+      <label for={name}>{label}</label>
     </div>
   );
 };
