@@ -1,0 +1,17 @@
+.check-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+}
+
+.check-field input {
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+}
+
+.check-field label {
+  font-size: 14px;
+  color: #3b4256;
+}

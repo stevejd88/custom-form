@@ -14,3 +14,9 @@ form {
   width: 460px;
   margin: 0 auto;
 }
+
+.check-group {
+  width: 460px;
+  color: #6f7482;
+  margin-bottom: 10px;
+}
