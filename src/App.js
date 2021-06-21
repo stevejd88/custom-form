@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+
+import FormInput from "./components/form-input/form-input.component";
+import TextArea from "./components/text-area/text-area.component";
+import Button from "./components/button/button.component";
+
+const initialState = {
+  address: "",
+  meaning: ""
+};
 
 function App() {
+  const [state, setState] = useState(initialState);
+
+  const { address, meaning } = state;
+
+  const onChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value });
+    console.log(e.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <form action=''>
+        <FormInput
+          label='What is your street Address'
+          id='address'
+          name='address'
+          value={address}
+          type='text'
+          onChange={onChange}
+        />
+        <TextArea
+          label='What is the meaning of life?'
+          id='meaningOfLife'
+          name='meaning'
+          value={meaning}
+          onChange={onChange}
+        />
+        <Button type='submit' label='Submit' />
+      </form>
     </div>
   );
 }
