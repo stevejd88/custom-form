@@ -19,6 +19,8 @@ const initialState = {
 
 function App() {
   const [state, setState] = useState(initialState);
+  const [disabled, setDisabled] = useState(true);
+  const [errors, setErrors] = useState({ address: "", meaning: "" });
 
   const { address, meaning, addition, chocolate, vanilla, strawberry } = state;
   const radioOptions = ["1", "2", "3", "4", "5"];
@@ -32,10 +34,43 @@ function App() {
     setState({ ...state, [e.target.name]: !e.target.checked });
   };
 
+  const onToggle = () => {
+    setDisabled(!disabled);
+  };
+
+  // function getErrors(state) {
+  //   const result = {};
+
+  //   if (!state.address) setErrors({...errors, errors.address: "Address is required"});
+  //   if (!state.meaning) result.meaning = "Please give a meaning";
+  //   return result;
+  // }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!address) {
+      setErrors((prev) => ({ ...prev, address: "Address is required" }));
+    } else if (!meaning) {
+      setErrors((prev) => ({
+        ...prev,
+        meaning: "Please give a meaning"
+      }));
+    } else {
+      alert("Form submitted!");
+      setState(initialState);
+      setDisabled(!disabled);
+      setErrors({});
+    }
+  };
+
   return (
     <div className='App'>
-      <form action=''>
-        <ToggleSwitch label='Do you live in the US?' name='toggle' />
+      <form onSubmit={handleSubmit}>
+        <ToggleSwitch
+          label='Do you live in the US?'
+          name='toggle'
+          onToggle={onToggle}
+        />
         <FormInput
           label='What is your street Address'
           id='address'
@@ -44,6 +79,8 @@ function App() {
           type='text'
           placeholder='Your answer'
           onChange={onChange}
+          disabled={disabled}
+          error={errors}
         />
         <Radio
           label='What is 2 + 2?'
@@ -59,6 +96,7 @@ function App() {
           name='meaning'
           value={meaning}
           onChange={onChange}
+          error={errors}
         />
         <div className='check-group'>
           <p>Which are your favorite ice cream flavors?</p>

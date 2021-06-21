@@ -2,7 +2,7 @@ import React from "react";
 
 import "./text-area.styles.css";
 
-const TextArea = ({ onChange, label, id, name, value, disabled }) => {
+const TextArea = ({ onChange, label, id, name, value, disabled, error }) => {
   return (
     <div className='text-area-group'>
       <label htmlFor={id}>{label}</label>
@@ -14,7 +14,7 @@ const TextArea = ({ onChange, label, id, name, value, disabled }) => {
         onChange={onChange}
         disabled={disabled}
       ></textarea>
-      <p className='error'>Field is required</p>
+      <p className='error'>{error.meaning}</p>
     </div>
   );
 };
