@@ -17,7 +17,7 @@ const Radio = ({ label, name, options, type, onChange }) => {
               value={option.toLowerCase()}
               onChange={onChange}
             />
-            <label for={option.toLowerCase()}>{option}</label>
+            <label htmlFor={option.toLowerCase()}>{option}</label>
           </div>
         );
       })}

@@ -15,7 +15,7 @@ const FormInput = ({
 }) => {
   return (
     <div className='text-input group'>
-      <label for={id}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
         className='input'
         id={id}
