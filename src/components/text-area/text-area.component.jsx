@@ -5,7 +5,7 @@ import "./text-area.styles.css";
 const TextArea = ({ onChange, label, id, name, value, disabled }) => {
   return (
     <div className='text-area-group'>
-      <label for={id}>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <textarea
         className='input'
         id={id}

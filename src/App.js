@@ -5,6 +5,7 @@ import FormInput from "./components/form-input/form-input.component";
 import TextArea from "./components/text-area/text-area.component";
 import Checkbox from "./components/checkbox/checkbox.component";
 import Radio from "./components/radio/radio.component";
+import ToggleSwitch from "./components/toggle-switch/toggle-switch.component";
 import Button from "./components/button/button.component";
 
 const initialState = {
@@ -34,6 +35,7 @@ function App() {
   return (
     <div className='App'>
       <form action=''>
+        <ToggleSwitch label='Do you live in the US?' name='toggle' />
         <FormInput
           label='What is your street Address'
           id='address'
