@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./form-input.styles.css";
+
 const FormInput = ({
   onChange,
   label,
@@ -7,11 +9,12 @@ const FormInput = ({
   name,
   value,
   type,
+  placeholder,
   readOnly,
   disabled
 }) => {
   return (
-    <div className='group'>
+    <div className='text-input group'>
       <label for={id}>{label}</label>
       <input
         className='input'
@@ -22,6 +25,7 @@ const FormInput = ({
         onChange={onChange}
         readOnly={readOnly}
         disabled={disabled}
+        placeholder={placeholder}
       ></input>
     </div>
   );

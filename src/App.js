@@ -40,6 +40,7 @@ function App() {
           name='address'
           value={address}
           type='text'
+          placeholder='Your answer'
           onChange={onChange}
         />
         <Radio
