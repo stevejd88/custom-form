@@ -1,8 +1,10 @@
 import React from "react";
 
+import "./text-area.styles.css";
+
 const TextArea = ({ onChange, label, id, name, value, disabled }) => {
   return (
-    <div className='group'>
+    <div className='text-area-group'>
       <label for={id}>{label}</label>
       <textarea
         className='input'
@@ -12,6 +14,7 @@ const TextArea = ({ onChange, label, id, name, value, disabled }) => {
         onChange={onChange}
         disabled={disabled}
       ></textarea>
+      <p className='error'>Field is required</p>
     </div>
   );
 };
