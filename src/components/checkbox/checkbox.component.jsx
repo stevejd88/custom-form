@@ -2,11 +2,18 @@ import React from "react";
 
 import "./checkbox-styles.css";
 
-const Checkbox = ({ label, name, type, checked }) => {
+const Checkbox = ({ id, handleClick, isChecked, value, label }) => {
   return (
     <div className='check-field'>
-      <input type={type} id={name} name={name} checked={checked} />
-      <label htmlFor={name}>{label}</label>
+      <input
+        type='checkbox'
+        id={id}
+        onClick={handleClick}
+        checked={isChecked}
+        value={value}
+      />{" "}
+      {label}
+      {/* <label htmlFor={name}>{label}</label> */}
     </div>
   );
 };

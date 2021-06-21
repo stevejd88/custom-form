@@ -12,9 +12,11 @@ const initialState = {
   address: "",
   addition: "",
   meaning: "",
-  chocolate: false,
-  vanilla: false,
-  strawberry: false
+  flavors: [
+    { id: 1, value: "chocolate", label: "Chocolate", isChecked: false },
+    { id: 2, value: "vanilla", label: "Vanilla", isChecked: false },
+    { id: 3, value: "strawberry", label: "Strawberry", isChecked: false }
+  ]
 };
 
 function App() {
@@ -22,7 +24,7 @@ function App() {
   const [disabled, setDisabled] = useState(true);
   const [errors, setErrors] = useState({ address: "", meaning: "" });
 
-  const { address, meaning, addition, chocolate, vanilla, strawberry } = state;
+  const { address, addition, meaning, flavors } = state;
   const radioOptions = ["1", "2", "3", "4", "5"];
 
   const onChange = (e) => {
@@ -31,7 +33,13 @@ function App() {
   };
 
   const handleClick = (e) => {
-    setState({ ...state, [e.target.name]: !e.target.checked });
+    let iceCreamFLavors = flavors;
+    flavors.forEach((flavor) => {
+      if (flavor.value === e.target.value) {
+        flavor.isChecked = e.target.checked;
+      }
+    });
+    setState({ ...state, flavors: iceCreamFLavors });
   };
 
   const onToggle = () => {
@@ -87,6 +95,7 @@ function App() {
           options={radioOptions}
           type='radio'
           name='addition'
+          value={addition}
           onChange={onChange}
         />
 
@@ -100,14 +109,11 @@ function App() {
         />
         <div className='check-group'>
           <p>Which are your favorite ice cream flavors?</p>
-          <Checkbox
-            label='Chocolate'
-            type='checkbox'
-            id='chocolate'
-            name='chocolate'
-            checked={!!chocolate}
-            onchange={handleClick}
-          />
+          {flavors.map((flavor) => {
+            return (
+              <Checkbox key={flavor.id} handleClick={handleClick} {...flavor} />
+            );
+          })}
         </div>
 
         <Button type='submit' label='Submit' />
