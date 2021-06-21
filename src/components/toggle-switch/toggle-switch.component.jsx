@@ -2,15 +2,18 @@ import React, { useRef } from "react";
 
 import "./toggle-switch.styles.css";
 
-const ToggleSwitch = ({ name, label, value, checked, onChange }) => {
+const ToggleSwitch = ({ name, label, value, checked, onToggle }) => {
   const toggle = useRef();
   const checkbox = useRef();
   function handleToggle() {
-    if (onChange) onChange();
+    if (onToggle) onToggle();
     toggle.current.classList.toggle("toggled");
     checkbox.current.checked = !checkbox.current.checked;
     console.log(checkbox.current.checked);
   }
+  // const handleToggle = () => {
+
+  // }
   return (
     <>
       <p>{label}</p>

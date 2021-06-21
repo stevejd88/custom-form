@@ -11,7 +11,8 @@ const FormInput = ({
   type,
   placeholder,
   readOnly,
-  disabled
+  disabled,
+  error
 }) => {
   return (
     <div className='text-input group'>
@@ -27,7 +28,7 @@ const FormInput = ({
         disabled={disabled}
         placeholder={placeholder}
       ></input>
-      <p className='error'>Field is required</p>
+      <p className='error'>{error ? error.address : null}</p>
     </div>
   );
 };
