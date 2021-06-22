@@ -23,6 +23,7 @@ function App() {
   const [state, setState] = useState(initialState);
   const [disabled, setDisabled] = useState(true);
   const [errors, setErrors] = useState({ address: "", meaning: "" });
+  const [touched, setTouched] = useState({});
 
   const { address, addition, meaning, flavors } = state;
   const radioOptions = ["1", "2", "3", "4", "5"];
@@ -46,13 +47,14 @@ function App() {
     setDisabled(!disabled);
   };
 
-  // function getErrors(state) {
-  //   const result = {};
-
-  //   if (!state.address) setErrors({...errors, errors.address: "Address is required"});
-  //   if (!state.meaning) result.meaning = "Please give a meaning";
-  //   return result;
-  // }
+  function handleBlur(e) {
+    e.persist();
+    setErrors((prev) => ({ ...prev, address: "Address is required" }));
+    setTouched((cur) => {
+      console.log(e.target.id);
+      return { ...cur, [e.target.id]: true };
+    });
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -87,8 +89,10 @@ function App() {
           type='text'
           placeholder='Your answer'
           onChange={onChange}
+          onBlur={handleBlur}
           disabled={disabled}
           error={errors}
+          touched={touched.address}
         />
         <Radio
           label='What is 2 + 2?'
