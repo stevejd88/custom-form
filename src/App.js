@@ -69,14 +69,8 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!address) {
-      setErrors((prev) => ({ ...prev, address: "Address is required" }));
-    } else if (!meaning) {
-      setErrors((prev) => ({
-        ...prev,
-        meaning: "Please give a meaning"
-      }));
-    } else {
+    console.log(errors);
+    if (address && meaning) {
       alert("Form submitted!");
       setState(initialState);
       setDisabled(!disabled);
@@ -140,7 +134,7 @@ function App() {
           })}
         </div>
 
-        <Button type='submit' label='Submit' />
+        <Button type='submit' label='Submit' disabled={!address & !meaning} />
       </form>
     </div>
   );
