@@ -49,7 +49,18 @@ function App() {
 
   function handleBlur(e) {
     e.persist();
-    setErrors((prev) => ({ ...prev, address: "Address is required" }));
+    if (e.target.id === "address") {
+      setErrors((prev) => ({
+        ...prev,
+        address: "Address is required"
+      }));
+    } else if (e.target.id === "meaningOfLife") {
+      setErrors((prev) => ({
+        ...prev,
+        meaning: "Please give a meaning"
+      }));
+    }
+
     setTouched((cur) => {
       console.log(e.target.id);
       return { ...cur, [e.target.id]: true };
@@ -82,7 +93,7 @@ function App() {
           onToggle={onToggle}
         />
         <FormInput
-          label='What is your street Address'
+          label='What is your street Address?'
           id='address'
           name='address'
           value={address}
@@ -92,7 +103,8 @@ function App() {
           onBlur={handleBlur}
           disabled={disabled}
           error={errors}
-          touched={touched.address}
+          touched={touched}
+          requiredField='true'
         />
         <Radio
           label='What is 2 + 2?'
@@ -109,7 +121,10 @@ function App() {
           name='meaning'
           value={meaning}
           onChange={onChange}
+          onBlur={handleBlur}
           error={errors}
+          touched={touched}
+          requiredField='true'
         />
         <div className='check-group'>
           <p>Which are your favorite ice cream flavors?</p>

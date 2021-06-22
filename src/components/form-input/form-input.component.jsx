@@ -14,11 +14,15 @@ const FormInput = ({
   readOnly,
   disabled,
   error,
-  touched
+  touched,
+  requiredField
 }) => {
   return (
     <div className='text-input group'>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label}
+        {requiredField && <span className='required-field'>*</span>}
+      </label>
       <input
         className='input'
         id={id}
@@ -31,8 +35,7 @@ const FormInput = ({
         disabled={disabled}
         placeholder={placeholder}
       ></input>
-      {/* <p className='error'>{error ? error.address : null}</p> */}
-      {touched && value ? (
+      {touched.address && value ? (
         <p className='success'>Answer recorded</p>
       ) : (
         <p className='error'>{error.address}</p>

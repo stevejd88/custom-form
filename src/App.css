@@ -20,3 +20,8 @@ form {
   color: #6f7482;
   margin-bottom: 10px;
 }
+
+.required-field {
+  color: #ed0131;
+  margin-left: 2px;
+}
