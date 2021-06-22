@@ -4,7 +4,7 @@
   align-items: flex-start;
   padding: 0px;
   width: 460px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .radio-group {
@@ -17,7 +17,7 @@
 }
 
 .radio input {
-  /* color: #ffffff; */
+  color: #ffffff;
   width: 20px;
   height: 20px;
 }
@@ -25,10 +25,4 @@
 .radio p {
   color: #6f7482;
   font-size: 16px;
-}
-
-.radio-input:hover {
-  background-color: red;
-  width: 20px;
-  height: 20px;
 }

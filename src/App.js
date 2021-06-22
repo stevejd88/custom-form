@@ -129,6 +129,7 @@ function App() {
           error={errors}
           touched={touched}
           requiredField='true'
+          placeholder='Your answer'
         />
         <div className='check-group'>
           <p>Which are your favorite ice cream flavors?</p>
