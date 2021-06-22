@@ -6,6 +6,18 @@
   font-family: "IBM Plex Sans", sans-serif;
 }
 
+h1 {
+  width: 460px;
+  color: #3b4256;
+  margin-bottom: 10px;
+}
+
+.notification {
+  color: #ed0131;
+  margin: 0;
+  width: 460px;
+}
+
 form {
   display: flex;
   flex-direction: column;

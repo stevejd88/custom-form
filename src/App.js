@@ -87,6 +87,10 @@ function App() {
   return (
     <div className='App'>
       <form onSubmit={handleSubmit}>
+        <h1>Formity Form</h1>
+        <p className='notification'>
+          <span>&#42;</span> Required
+        </p>
         <ToggleSwitch
           label='Do you live in the US?'
           name='toggle'

@@ -21,7 +21,7 @@ const FormInput = ({
     <div className='text-input group'>
       <label htmlFor={id}>
         {label}
-        {requiredField && <span className='required-field'>*</span>}
+        {requiredField && <span className='required-field'>&#42;</span>}
       </label>
       <input
         className='input'

@@ -17,7 +17,7 @@ const TextArea = ({
   return (
     <div className='text-area-group'>
       <label htmlFor={id}>
-        {label} {requiredField && <span className='required-field'>*</span>}
+        {label} {requiredField && <span className='required-field'>&#42;</span>}
       </label>
       <textarea
         className='input'
