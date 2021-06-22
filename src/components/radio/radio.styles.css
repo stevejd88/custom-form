@@ -17,7 +17,7 @@
 }
 
 .radio input {
-  color: #ffffff;
+  /* color: #ffffff; */
   width: 20px;
   height: 20px;
 }
@@ -27,8 +27,8 @@
   font-size: 16px;
 }
 
-.radio-group:hover {
+.radio-input:hover {
   background-color: red;
-  /* width: 20px;
-  height: 20px; */
+  width: 20px;
+  height: 20px;
 }
