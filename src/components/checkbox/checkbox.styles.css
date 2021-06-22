@@ -1,3 +1,7 @@
+.check-group {
+  margin-bottom: 20px;
+}
+
 .check-field {
   display: flex;
   flex-direction: row;

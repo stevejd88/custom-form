@@ -11,11 +11,9 @@ const ToggleSwitch = ({ name, label, value, checked, onToggle }) => {
     checkbox.current.checked = !checkbox.current.checked;
     console.log(checkbox.current.checked);
   }
-  // const handleToggle = () => {
 
-  // }
   return (
-    <>
+    <div className='toggle-container'>
       <p>{label}</p>
       <input
         ref={checkbox}
@@ -32,7 +30,7 @@ const ToggleSwitch = ({ name, label, value, checked, onToggle }) => {
       >
         <span className='toggle'></span>
       </span>
-    </>
+    </div>
   );
 };
 
