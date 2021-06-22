@@ -4,6 +4,7 @@ import "./form-input.styles.css";
 
 const FormInput = ({
   onChange,
+  onBlur,
   label,
   id,
   name,
@@ -12,7 +13,8 @@ const FormInput = ({
   placeholder,
   readOnly,
   disabled,
-  error
+  error,
+  touched
 }) => {
   return (
     <div className='text-input group'>
@@ -24,11 +26,17 @@ const FormInput = ({
         name={name}
         value={value}
         onChange={onChange}
+        onBlur={onBlur}
         readOnly={readOnly}
         disabled={disabled}
         placeholder={placeholder}
       ></input>
-      <p className='error'>{error ? error.address : null}</p>
+      {/* <p className='error'>{error ? error.address : null}</p> */}
+      {touched && value ? (
+        <p className='success'>Answer recorded</p>
+      ) : (
+        <p className='error'>{error.address}</p>
+      )}
     </div>
   );
 };

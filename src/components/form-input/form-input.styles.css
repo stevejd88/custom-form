@@ -7,7 +7,7 @@
   margin-bottom: 10px;
 }
 
-.text-input .input {
+.text-input input {
   color: #b8bcca;
   display: flex;
   flex-direction: column;
@@ -20,8 +20,8 @@
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.01em;
-  background: #f8fafc;
-  border: none;
+  background-color: #f8fafc;
+  border: 1px solid #f8fafc;
   border-radius: 4px;
 }
 
@@ -44,6 +44,13 @@
 
 .error {
   color: #ed0131;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 2px 0;
+}
+
+.success {
+  color: #0e6245;
   font-size: 12px;
   line-height: 16px;
   margin: 2px 0;
