@@ -12,7 +12,8 @@ const TextArea = ({
   error,
   onBlur,
   touched,
-  requiredField
+  requiredField,
+  placeholder
 }) => {
   return (
     <div className='text-area-group'>
@@ -27,6 +28,7 @@ const TextArea = ({
         onChange={onChange}
         onBlur={onBlur}
         disabled={disabled}
+        placeholder={placeholder}
       ></textarea>
       {touched.meaningOfLife && value ? (
         <p className='success'>Answer recorded</p>
