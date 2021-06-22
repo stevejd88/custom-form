@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./checkbox-styles.css";
+import "./checkbox.styles.css";
 
 const Checkbox = ({ id, handleClick, isChecked, value, label }) => {
   return (
